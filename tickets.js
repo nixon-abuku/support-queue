@@ -5,9 +5,25 @@ const tickets = [
   { id: 4, customer: "Alan Turing",    issue: "Password reset email missing", status: "closed" }
 ];
 
+// SUMMARY OF TICKETS
 const getTicketSummaries = (tickets) => {
-    const collectSummary = tickets.map(ticket => `#${ticket.id} - ${ticket.customer}: ${ticket.issue} (${ticket.status}) `);
+    const collectSummary = tickets.map(
+        ticket => `#${ticket.id} - ${ticket.customer}: ${ticket.issue} (${ticket.status}) `
+    );
     return collectSummary;
 }
 
+// FIND TICKET BY ID
+const getTicketById = (tickets, id) => {
+    return tickets.find((ticket) => 
+        ticket.id === id
+    );
+}
+//SUMMARY OF TICKETS
 console.log(getTicketSummaries(tickets));
+
+
+//GET TICKETS BY ID
+console.log(getTicketById(tickets, 2));
+console.log(getTicketById(tickets, 99));
+
