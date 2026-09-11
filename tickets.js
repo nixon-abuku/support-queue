@@ -19,11 +19,26 @@ const getTicketById = (tickets, id) => {
         ticket.id === id
     );
 }
+
+
+// 
+const getOpenIssues = (tickets) => {
+    return tickets.filter((ticket) => ticket.status === "open").map((ticket) => ticket.issue)
+}
+
+//console.log(getOpenIssues(tickets));
+
+
+// 
+const hasUnresolvedTickets = (tickets) => {
+    return tickets.some((ticket) => ticket.status != "closed")
+}
+console.log(hasUnresolvedTickets(tickets));
+
 //SUMMARY OF TICKETS
-console.log(getTicketSummaries(tickets));
+//console.log(getTicketSummaries(tickets));
 
 
 //GET TICKETS BY ID
-console.log(getTicketById(tickets, 2));
-console.log(getTicketById(tickets, 99));
-
+//console.log(getTicketById(tickets, 2));
+//console.log(getTicketById(tickets, 99));
