@@ -33,7 +33,23 @@ const getOpenIssues = (tickets) => {
 const hasUnresolvedTickets = (tickets) => {
     return tickets.some((ticket) => ticket.status != "closed")
 }
-console.log(hasUnresolvedTickets(tickets));
+
+
+//COUNT OPEN TICKETS
+const countOpenTickets = (tickets) => {
+    return tickets.reduce((acc, ticket) => {
+        let total = 0;
+        if (ticket.status === "open"){
+            total = acc + 1
+        }else {
+            total = acc + 0
+        }
+        return total;
+    }, 0);
+}
+
+console.log(countOpenTickets(tickets));
+
 
 //SUMMARY OF TICKETS
 //console.log(getTicketSummaries(tickets));
